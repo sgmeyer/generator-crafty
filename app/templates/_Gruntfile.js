@@ -1,3 +1,8 @@
+var LIVERELOAD_PORT = 35729;
+var mountFolder = function (connect, dir) {
+  return connect.static(require('path').resolve(dir));
+};
+
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -21,16 +26,48 @@ module.exports = function(grunt) {
         connect: {
         	server: {
 		      options: {
-		        port: 9001,
-		        base: 'www-root'
+		        port: 8888,
+		        hostname: 'localhost',
+		        base: 'build/'
 		      }
-		    }
-        }
+		    }/*,
+	        livereload: {
+	          options: {
+	            middleware: function (connect) {
+	              return [
+	                require('connect-livereload')({port: LIVERELOAD_PORT}),
+	                mountFolder(connect, '.')
+	              ];
+	            }
+	          }
+            }*/
+        },
+        open: {
+	      server: {
+	        path: 'http://localhost:<%= connect.server.options.port %>'
+	      }
+	    },
+        watch: {
+	      options: {
+	        nospawn: true,
+	        livereload: LIVERELOAD_PORT
+	      },
+	      livereload: {
+	        files: [
+	          'index.html'
+	        ],
+	        tasks: ['build']
+	      }
+	    }
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-open');
 
-	grunt.registerTask('default', ['uglify', 'copy', 'connect']);
+	grunt.registerTask('build', ['uglify', 'copy']);
+	grunt.registerTask('run', ['build', 'connect:server', 'open', 'watch']);
+	grunt.registerTask('default', ['build', 'server']);
 }
