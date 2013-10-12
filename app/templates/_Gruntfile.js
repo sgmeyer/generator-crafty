@@ -6,6 +6,7 @@ var mountFolder = function (connect, dir) {
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		clean: ['build/'],
 		uglify: {
 		  options: {
 		    banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -27,10 +28,10 @@ module.exports = function(grunt) {
         	server: {
 		      options: {
 		        port: 8888,
-		        hostname: 'localhost',
-		        base: 'build/'
+		        hostname: 'localhost'//,
+		        //base: 'build/'
 		      }
-		    }/*,
+		    },
 	        livereload: {
 	          options: {
 	            middleware: function (connect) {
@@ -40,7 +41,7 @@ module.exports = function(grunt) {
 	              ];
 	            }
 	          }
-            }*/
+            }
         },
         open: {
 	      server: {
@@ -61,13 +62,14 @@ module.exports = function(grunt) {
 	    }
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-open');
 
-	grunt.registerTask('build', ['uglify', 'copy']);
-	grunt.registerTask('run', ['build', 'connect:server', 'open', 'watch']);
+	grunt.registerTask('build', ['clean', 'uglify', 'copy']);
+	grunt.registerTask('server', ['build', 'connect:server', 'open', 'watch']);
 	grunt.registerTask('default', ['build', 'server']);
 }
