@@ -31,4 +31,4 @@ To build and run your application locally you can use the included Grunt setup. 
 
 - open up the terminal.
 - Navigate to your games root directory.  This directory will contain the Gruntfile.js file.
-- You can use the 'grunt server' command to clean, minify/copy/build, run node server, open default browser.
+- You can use the `grunt server` command to clean, minify/copy/build, run node server, open default browser.
