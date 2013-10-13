@@ -22,7 +22,24 @@ describe('crafty generator', function () {
   it('creates expected files', function (done) {
     var expected = [
       '.jshintrc',
-      '.editorconfig'
+      '.editorconfig',
+      'Gruntfile.js',
+      'package.json',
+      'bower.json',
+      'index.html',
+      'app/src/config.js',
+      'app/src/game.js',
+      'app/src/sprites.js',
+      'app/src/components/MouseHover.js',
+      'app/src/entities/base/BaseEntity.js',
+      'app/src/interfaces/info.js',
+      'app/src/libs/backbone-0.9.2.min.js',
+      'app/src/libs/crafty-0.4.9.js',
+      'app/src/libs/jquery-1.7.2.min.js',
+      'app/src/libs/modernizr-2.5.3.min.js',
+      'app/src/libs/require-jquery.js',
+      'app/src/libs/underscore-1.3.4.min.js',
+      'app/src/scenes/main.js'
     ];
 
     helpers.mockPrompt(this.app, {
