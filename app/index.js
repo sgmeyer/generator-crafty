@@ -56,7 +56,7 @@ CraftyGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('src/_config.js', 'app/src/config.js');
   this.copy('src/_game.js', 'app/src/game.js');
   this.copy('src/_sprites.js', 'app/src/sprites.js');
-  this.copy('src/components/_MouseHover.js', 'sapp/rc/components/MouseHover.js');
+  this.copy('src/components/_MouseHover.js', 'app/src/components/MouseHover.js');
   this.copy('src/entities/base/_BaseEntity.js', 'app/src/entities/base/BaseEntity.js');
   this.copy('src/interfaces/_info.js', 'app/src/interfaces/info.js');
   this.copy('src/libs/_backbone-0.9.2.min.js', 'app/src/libs/backbone-0.9.2.min.js');

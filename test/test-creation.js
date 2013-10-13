@@ -21,13 +21,12 @@ describe('crafty generator', function () {
 
   it('creates expected files', function (done) {
     var expected = [
-      // add files you expect to exist here.
       '.jshintrc',
       '.editorconfig'
     ];
 
     helpers.mockPrompt(this.app, {
-      'someOption': true
+      'gameName': 'Game'
     });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {
