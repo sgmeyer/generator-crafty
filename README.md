@@ -17,6 +17,7 @@ This is currently not deployed to the Node Package Manager (NPM).  Until this is
 
 - Make sure you have yo, grunt, node and NPM installed.
 - Open the root directory of `generator-crafty`
+- Install the generators dependencies by typing the command `npm install`.
 - Type the command `npm link`.  This will link the Yeoman generator to your local NPM.
 
 ## Usage - Setup Game Scaffolding
