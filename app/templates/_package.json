@@ -1,6 +1,10 @@
 {
   "name": "<%= gameName %>",
   "version": "0.0.0",
+  "description": "<%= gameName %> is an HTML and JavaScript game built using the Crafty.js game engine and the generator-crafty templates.",
+  "keywords": [
+    "<%= gameName %>"
+  ],
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
