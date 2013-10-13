@@ -1,9 +1,14 @@
 {
   "name": "generator-crafty",
   "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "description": "A Crafty.js generator for Yeoman.  Provides Craft.js scaffolding based on CraftyBoilerplate (https://github.com/ahilles107/CraftyBoilerplate)",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "yeoman-crafty",
+    "Crafty.js",
+    "Video Game Engine",
+    "Crafty.js scaffolding",
+    "Crafty scaffolding"
   ],
   "homepage": "https://github.com/sgmeyer/generator-crafty",
   "bugs": "https://github.com/sgmeyer/generator-crafty/issues",
@@ -24,7 +29,7 @@
     "yeoman-generator": "~0.13.0"
   },
   "devDependencies": {
-    "mocha": "~1.12.0"
+    "mocha": "~1.12.0",
   },
   "peerDependencies": {
     "yo": ">=1.0.0-rc.1"
