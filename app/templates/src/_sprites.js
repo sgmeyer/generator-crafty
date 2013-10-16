@@ -13,14 +13,6 @@
 Sprites = Backbone.Model.extend({
     defaults: {
         images:{
-            /*'nameOfImage' : {
-                 'file' : 'web/images/file.png',
-                 'tile' : 211,
-                 'tileh' : 117,
-                 'elements': {
-                     'ufo' : [0, 0]
-                 }*/
-            }
         }
     },
     initialize: function(){

@@ -4,6 +4,5 @@ Config = Backbone.Model.extend({
     },
     initialize: function() {
        
-    },
-    
+    }
 });
