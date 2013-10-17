@@ -87,6 +87,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-open');
 
 	grunt.registerTask('build:dev', ['clean', 'uglify', 'copy']);
-	grunt.registerTask('server', ['build', 'connect:server', 'open', 'watch']);
+	grunt.registerTask('server', ['connect:server', 'open', 'watch']);
 	grunt.registerTask('default', ['build', 'server']);
 }
