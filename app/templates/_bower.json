@@ -8,7 +8,6 @@
     "underscore": "~1.5.2",
     "backbone": "~1.1.0",
     "modernizr": "~2.6.2",
-    "requirejs-jquery": "~0.25.0",
-    "crafty": "~0.5.4"
+    "requirejs-jquery": "~0.25.0"
   }
 }
