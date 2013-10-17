@@ -6,21 +6,38 @@ var mountFolder = function (connect, dir) {
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		clean: ['build/'],
+		clean: ['dist'],
 		uglify: {
-		  options: {
-		    banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-		  },
-		  build: {
-		    src: ['src/**/*.js', '!src/libs/**'],
-		    dest: 'build/src/<%= pkg.name %>.min.js'
-		  }
+			build: {
+				files: [{
+                    expand: true,
+                    cwd: 'app/src/',
+                    src: ['**/*.js', '!libs/**/*'],
+                    dest: 'dist/src/',
+                    ext: 'a.js'
+				},
+				{
+                    expand: true,
+                    flatten: true,
+                    cwd: 'app/src/libs/',
+        		    src: ['jquery/jquery.js', 'modernizr/modernizr.js'],
+        		    dest: 'dist/src/libs/',
+                    ext: '.min.js'
+        		},
+                {
+                    'dist/src/libs/requirejs-jquery.min.js': ['app/src/libs/requirejs-jquery/parts/require.js', 'app/src/libs/requirejs-jquery/parts/query.js']
+                }]
+			}
 		},
 		copy: {
-    	  dev: {
+    	  dist: {
             files: [{
-              src: 'src/libs/*.js',
-              dest: 'build/'
+              expand: true,
+              flatten: true,
+              cwd: 'app/src/libs/',
+              src: ['backbone/backbone-min.js', 'backbone/backbone-min.map', 'underscore/underscore-min.js', 'underscore/underscore-min.map', 'crafty/crafty.min.js'],
+              dest: 'dist/src/libs/',
+              filter: 'isFile'
             }]
           }
         },
@@ -29,14 +46,13 @@ module.exports = function(grunt) {
 		      options: {
 		        port: 8888,
 		        hostname: 'localhost',
-		        base: "app"
+		        base: "app/"
 		      }
 		    },
 	        livereload: {
 	          options: {
 	            middleware: function (connect) {
-	              return [
-	                require('connect-livereload')({port: LIVERELOAD_PORT}),
+	              return [require('connect-livereload')({port: LIVERELOAD_PORT}),
 	                mountFolder(connect, '.')
 	              ];
 	            }
@@ -49,16 +65,14 @@ module.exports = function(grunt) {
 	      }
 	    },
         watch: {
-	      options: {
-	        nospawn: true,
-	        livereload: LIVERELOAD_PORT
-	      },
-	      livereload: {
-	        files: [
-	          'app/index.html'
-	        ],
-	        tasks: ['build']
-	      }
+            html: {
+                options: { livereload: true },
+                files: ['app/index.html'],
+            },
+	        js: {
+                options: { livereload: true },
+                files: ['app/src/**/*.js']
+            }
 	    }
 	});
 
@@ -67,9 +81,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-livereload');
 	grunt.loadNpmTasks('grunt-open');
 
 	grunt.registerTask('build', ['clean', 'uglify', 'copy']);
-	grunt.registerTask('server', ['build', 'connect:server', 'open', 'watch']);
-	grunt.registerTask('default', ['build', 'server']);
+	grunt.registerTask('server', ['connect:server', 'open', 'watch']);
+	grunt.registerTask('default', ['server']);
 }
