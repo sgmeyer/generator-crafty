@@ -6,76 +6,38 @@ var mountFolder = function (connect, dir) {
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		clean: {
-            release:['build/dev/'],
-            dev:['build/release/']
-        },
+		clean: ['dist'],
 		uglify: {
-    		options: {
-    	       banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-    		},
-    		build: {
-                files: [{
+			build: {
+				files: [{
+                    expand: true,
+                    cwd: 'app/src/',
+                    src: ['**/*.js', '!libs/**/*'],
+                    dest: 'dist/src/',
+                    ext: 'a.js'
+				},
+				{
                     expand: true,
                     flatten: true,
                     cwd: 'app/src/libs/',
-        		    src: 'jquery/jquery.js',
-        		    dest: 'build/dev/src/libs/',
+        		    src: ['jquery/jquery.js', 'modernizr/modernizr.js'],
+        		    dest: 'dist/src/libs/',
                     ext: '.min.js'
-        		  },
-                  {
-                    expand: true,
-                    flatten: true,
-                    cwd: 'app/src/libs/',
-                    src: 'modernizr/modernizr.js',
-                    dest: 'build/dev/src/libs/',
-                    ext: '.min.js'
-                  },
-                  {
-                    'build/dev/src/libs/requirejs-jquery.min.js': ['app/src/libs/requirejs-jquery/parts/require.js', 'app/src/libs/requirejs-jquery/parts/query.js']
-                  }]
-            }
+        		},
+                {
+                    'dist/src/libs/requirejs-jquery.min.js': ['app/src/libs/requirejs-jquery/parts/require.js', 'app/src/libs/requirejs-jquery/parts/query.js']
+                }]
+			}
 		},
 		copy: {
-    	  dev: {
+    	  dist: {
             files: [{
               expand: true,
               flatten: true,
               cwd: 'app/src/libs/',
-              src: 'backbone/backbone-min.js',
-              dest: 'build/dev/src/libs/',
+              src: ['backbone/backbone-min.js', 'backbone/backbone-min.map', 'underscore/underscore-min.js', 'underscore/underscore-min.map', 'crafty/crafty.min.js'],
+              dest: 'dist/src/libs/',
               filter: 'isFile'
-            },
-            {
-              expand: true,
-              flatten: true,
-              cwd: 'app/src/libs/',
-              src: 'crafty/crafty.min.js',
-              dest: 'build/dev/src/libs/',
-              filter: 'isFile'
-            },
-            {
-                expand: true,
-                flatten: true,
-                cwd: 'app/src/libs/',
-                src: 'underscore/underscore-min.js',
-                dest: 'build/dev/src/libs/',
-                filter: 'isFile'
-            },
-            {
-                expand: true,
-                cwd: 'app/src/',
-                src: ['**/*.js', '!libs/**'],
-                dest: 'build/dev/src/',
-                filter: 'isFile'
-            },
-            {
-                expand: true,
-                flatten: true,
-                cwd: 'app/',
-                src: 'index.html',
-                dest: 'build/dev/',
-                filter: 'isFile'
             }]
           }
         },
@@ -84,7 +46,7 @@ module.exports = function(grunt) {
 		      options: {
 		        port: 8888,
 		        hostname: 'localhost',
-		        base: "build/dev"
+		        base: "app/"
 		      }
 		    },
 	        livereload: {
@@ -124,7 +86,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-open');
 
-	grunt.registerTask('build', ['clean', 'uglify', 'copy']);
+	grunt.registerTask('build:dev', ['clean', 'uglify', 'copy']);
 	grunt.registerTask('server', ['build', 'connect:server', 'open', 'watch']);
 	grunt.registerTask('default', ['build', 'server']);
 }
