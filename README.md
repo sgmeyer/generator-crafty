@@ -1,11 +1,9 @@
 generator-crafty
 ================
 
-
-
 ## Features
 
-* CSS minification
+* JavaScript minification
 * Built-in preview server with LiveReload
 * CraftyBootstrap scaffolding for more information (https://github.com/ahilles107/CraftyBoilerplate).
 
@@ -34,4 +32,6 @@ mkdir my-new-project && cd $_
 ```
 
 Run `yo crafty`
+```
+yo crafty
 ```
