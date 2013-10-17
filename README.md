@@ -44,7 +44,7 @@ grunt server
 ```
 or
 ```
-grunt server
+grunt
 ```
 
 
