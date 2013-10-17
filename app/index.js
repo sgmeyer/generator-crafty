@@ -37,6 +37,8 @@ CraftyGenerator.prototype.app = function app() {
 };
 
 CraftyGenerator.prototype.projectfiles = function projectfiles() {
+  this.mkdir('app');
+  this.mkdir('app/web');
   this.mkdir('app/web/css');
   this.mkdir('app/web/images');
 

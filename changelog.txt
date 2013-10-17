@@ -1,3 +1,7 @@
+v0.1.2 - 10-17-2013
+
+* Copy over the web directory and the sub content
+
 v0.1.1 - 10-17-2013
 
 * Adding changelog.txt

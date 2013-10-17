@@ -38,6 +38,13 @@ module.exports = function(grunt) {
               src: ['backbone/backbone-min.js', 'backbone/backbone-min.map', 'underscore/underscore-min.js', 'underscore/underscore-min.map', 'crafty/crafty.min.js'],
               dest: 'dist/src/libs/',
               filter: 'isFile'
+            }, 
+            {
+            	expand: true,
+            	cwd: 'app/web',
+            	src: ['**/*'],
+            	dest: 'dist/web',
+            	filter: 'isFile'
             }]
           }
         },
