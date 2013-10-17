@@ -1,6 +1,6 @@
 {
   "name": "generator-crafty",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A Crafty.js generator for Yeoman.  Provides Craft.js scaffolding based on CraftyBoilerplate (https://github.com/ahilles107/CraftyBoilerplate)",
   "keywords": [
     "yeoman-generator",
@@ -14,8 +14,8 @@
   "bugs": "https://github.com/sgmeyer/generator-crafty/issues",
   "author": {
     "name": "Shawn Meyer",
-    "email": "shawn@shawnmeyer.com",
-    "url": "https://github.com/sgmeyer"
+    "email": "sgmeyer@gmail.com",
+    "url": "https://www.shawnmeyer.com"
   },
   "main": "app/index.js",
   "repository": {
