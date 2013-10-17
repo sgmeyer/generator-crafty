@@ -12,20 +12,20 @@ module.exports = function(grunt) {
 				files: [{
                     expand: true,
                     cwd: 'app/src/',
-                    src: ['**/*.js', '!libs/**/*'],
+                    src: ['**/*.js', '!libs/**/*', '!bower_components/**/*'],
                     dest: 'dist/src/',
                     ext: 'a.js'
 				},
 				{
                     expand: true,
                     flatten: true,
-                    cwd: 'app/src/libs/',
+                    cwd: 'app/src/brower_components/',
         		    src: ['jquery/jquery.js', 'modernizr/modernizr.js'],
         		    dest: 'dist/src/libs/',
                     ext: '.min.js'
         		},
                 {
-                    'dist/src/libs/requirejs-jquery.min.js': ['app/src/libs/requirejs-jquery/parts/require.js', 'app/src/libs/requirejs-jquery/parts/query.js']
+                    'dist/src/libs/requirejs-jquery.min.js': ['app/src/bower_components/requirejs-jquery/parts/require.js', 'app/src/bower_components/requirejs-jquery/parts/query.js']
                 }]
 			}
 		},
@@ -34,8 +34,16 @@ module.exports = function(grunt) {
             files: [{
               expand: true,
               flatten: true,
+              cwd: 'app/src/bower_components/',
+              src: ['backbone/backbone-min.js', 'backbone/backbone-min.map', 'underscore/underscore-min.js', 'underscore/underscore-min.map'],
+              dest: 'dist/src/libs/',
+              filter: 'isFile'
+            },
+            {
+              expand: true,
+              flatten: true,
               cwd: 'app/src/libs/',
-              src: ['backbone/backbone-min.js', 'backbone/backbone-min.map', 'underscore/underscore-min.js', 'underscore/underscore-min.map', 'crafty/crafty.min.js'],
+              src: ['**/*'],
               dest: 'dist/src/libs/',
               filter: 'isFile'
             }, 
