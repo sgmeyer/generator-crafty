@@ -52,8 +52,7 @@ module.exports = function(grunt) {
 	        livereload: {
 	          options: {
 	            middleware: function (connect) {
-	              return [
-	                require('connect-livereload')({port: LIVERELOAD_PORT}),
+	              return [require('connect-livereload')({port: LIVERELOAD_PORT}),
 	                mountFolder(connect, '.')
 	              ];
 	            }
@@ -66,16 +65,14 @@ module.exports = function(grunt) {
 	      }
 	    },
         watch: {
-	      options: {
-	        nospawn: true,
-	        livereload: LIVERELOAD_PORT
-	      },
-	      livereload: {
-	        files: [
-	          'app/index.html'
-	        ],
-	        tasks: ['build']
-	      }
+            html: {
+                options: { livereload: true },
+                files: ['app/index.html'],
+            },
+	        js: {
+                options: { livereload: true },
+                files: ['app/src/**/*.js']
+            }
 	    }
 	});
 
@@ -84,9 +81,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-livereload');
 	grunt.loadNpmTasks('grunt-open');
 
-	grunt.registerTask('build:dev', ['clean', 'uglify', 'copy']);
+	grunt.registerTask('build', ['clean', 'uglify', 'copy']);
 	grunt.registerTask('server', ['connect:server', 'open', 'watch']);
-	grunt.registerTask('default', ['build', 'server']);
+	grunt.registerTask('default', ['server']);
 }
