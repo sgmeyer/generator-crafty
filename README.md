@@ -31,7 +31,25 @@ Make a new directory, and `cd` into it:
 mkdir my-new-project && cd $_
 ```
 
-Run `yo crafty`
+Run `yo crafty`:
 ```
 yo crafty
+```
+
+## Previewing Gaming
+
+Run game in local server with live preview.  Run command in root directory of your game:
+```
+grunt server
+```
+or
+```
+grunt server
+```
+
+
+## Minify and build game
+
+```
+grunt build
 ```
