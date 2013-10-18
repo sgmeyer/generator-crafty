@@ -1,11 +1,9 @@
 generator-crafty
 ================
 
-
-
 ## Features
 
-* CSS minification
+* JavaScript minification
 * Built-in preview server with LiveReload
 * CraftyBootstrap scaffolding for more information (https://github.com/ahilles107/CraftyBoilerplate).
 
@@ -33,5 +31,25 @@ Make a new directory, and `cd` into it:
 mkdir my-new-project && cd $_
 ```
 
-Run `yo crafty`
+Run `yo crafty`:
+```
+yo crafty
+```
+
+## Previewing Gaming
+
+Run game in local server with live preview.  Run command in root directory of your game:
+```
+grunt server
+```
+or
+```
+grunt
+```
+
+
+## Minify and build game
+
+```
+grunt build
 ```

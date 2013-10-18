@@ -1,5 +1,5 @@
 {
-  "name": "<%= gameName %>",
+  "name": "YourGame",
   "version": "0.0.0",
   "description": "<%= gameName %> is an HTML and JavaScript game built using the Crafty.js game engine and the generator-crafty templates.",
   "keywords": [
