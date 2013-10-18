@@ -13,7 +13,7 @@ Yeoman.io generator for CraftyJS game engine.
 
 You can install this generator using the Node Package Manager (npm).  The following steps will setup your CraftyJS scaffolding.  The scaffolding is based on the CraftyBoilerplate (https://github.com/ahilles107/CraftyBoilerplate).
 
-## Prerequisite nstallation (Node, NPM, and Yeoman)
+## Prerequisite Installation (Node, NPM, and Yeoman)
 
 * To use this generator you must have node.js and npm installed.  To install node and npm go to (http://nodejs.org/).
 * Installing Yeoman will install Grunt and Bower (http://www.yeoman.io)
