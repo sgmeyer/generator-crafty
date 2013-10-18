@@ -9,9 +9,9 @@ generator-crafty
 
 ## Decription
 
-Yeoman.io generator for Crafty.js game engine.
+Yeoman.io generator for CraftyJS game engine.
 
-You can install this generator using the Node Package Manager (npm).  The following steps will setup your Craft.js scaffolding.  The scaffolding is based on the CraftyBoilerplate (https://github.com/ahilles107/CraftyBoilerplate).
+You can install this generator using the Node Package Manager (npm).  The following steps will setup your CraftyJS scaffolding.  The scaffolding is based on the CraftyBoilerplate (https://github.com/ahilles107/CraftyBoilerplate).
 
 ## Prerequisite nstallation (Node, NPM, and Yeoman)
 
