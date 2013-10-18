@@ -1,3 +1,8 @@
+v0.1.3 - 10-18-2013
+
+* Fixing typo in minification packaging.
+* Fixing typo in README.md
+
 v0.1.2 - 10-17-2013
 
 * Copy over the web directory and the sub content
@@ -5,6 +10,7 @@ v0.1.2 - 10-17-2013
 * Adding build to copy over entire src/libs directory
 * Giving package.json 'name' a static name.  packag.json files do not support spaces in the name
   http://github.com/isaacs/npm/issues/3105
+
 
 v0.1.1 - 10-17-2013
 
