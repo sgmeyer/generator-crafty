@@ -20,7 +20,7 @@ Sprites = Backbone.Model.extend({
     },
     /**
      * Create Crafty sprites from images object
-     * Pass key if You want create only one choosen sprite.
+     * Pass key if You want create only one chosen sprite.
      * 
      * @param  string key - sprite definition key
      */
