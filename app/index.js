@@ -55,6 +55,10 @@ CraftyGenerator.prototype.projectfiles = function projectfiles() {
 
   this.copy('src/libs/crafty/_crafty.js', 'app/src/libs/crafty/crafty.js');
   this.copy('src/libs/crafty/_crafty.min.js', 'app/src/libs/crafty/crafty.min.js');
+
+  this.copy('src/libs/craftydebug/_craftyDebug.js', 'app/src/libs/craftydebug/craftyDebug.js');
+  this.copy('src/libs/craftydebug/panels/_assets.js', 'app/src/libs/craftydebug/panels/assets.js');
+  this.copy('src/libs/craftydebug/panels/_entities.js', 'app/src/libs/craftydebug/panels/entities.js');
 };
 
 CraftyGenerator.prototype.gruntfileJSON = function gruntfile() {

@@ -25,6 +25,11 @@
   <script src="src/bower_components/backbone/backbone.js"></script>
   <script src="src/bower_components/requirejs-jquery/parts/require.js"></script>
   <script src="src/game.js"></script>
+
+  <!-- These are debugging libraries and can be removed if you don't want the debugger. -->
+  <script src="src/libs/CraftyDebug/craftyDebug.js"></script>
+  <script src="src/libs/CraftyDebug/panels/assets.js"></script>
+  <script src="src/libs/CraftyDebug/panels/entities.js"></script>
   <script type="text/javascript">
   gameContainer = {
       env : 'dev',
@@ -34,7 +39,7 @@
   sc    = [], // container for backbone scene elements
   infc  = []  // container for backbone interface elements
 
-  Crafty.modules({ 'crafty-debug-bar': 'DEV' }, function () {
+  $(document).ready(function () {
     Crafty.debugBar.show();
   });
   </script>
