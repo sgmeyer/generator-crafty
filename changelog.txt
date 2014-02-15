@@ -1,3 +1,7 @@
+v0.2.1 - 2-15-2014
+
+* Updating the crafty.js library to version 0.6.2
+
 v0.2.0 - 02-06-2014
 
 * Removing the use of Crafty.modules as the community module page has been sunsetted.
