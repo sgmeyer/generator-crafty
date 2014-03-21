@@ -1,3 +1,7 @@
+v0.2.2 - 3-21-2014
+
+* Updating the paths to be case senstive
+
 v0.2.1 - 2-15-2014
 
 * Updating the crafty.js library to version 0.6.2

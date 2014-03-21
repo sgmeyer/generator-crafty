@@ -1,6 +1,6 @@
 {
   "name": "generator-crafty",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "A Crafty.js generator for Yeoman.  Provides Craft.js scaffolding based on CraftyBoilerplate (https://github.com/ahilles107/CraftyBoilerplate)",
   "keywords": [
     "yeoman-generator",
