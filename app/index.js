@@ -53,12 +53,12 @@ CraftyGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('src/interfaces/_info.js', 'app/src/interfaces/info.js');
   this.copy('src/scenes/_main.js', 'app/src/scenes/main.js');
 
-  this.copy('src/libs/crafty/_crafty.js', 'app/src/libs/crafty/crafty.js');
-  this.copy('src/libs/crafty/_crafty.min.js', 'app/src/libs/crafty/crafty.min.js');
+  this.copy('src/libs/Crafty/_crafty.js', 'app/src/libs/Crafty/crafty.js');
+  this.copy('src/libs/Crafty/_crafty.min.js', 'app/src/libs/Crafty/crafty.min.js');
 
-  this.copy('src/libs/craftydebug/_craftyDebug.js', 'app/src/libs/craftydebug/craftyDebug.js');
-  this.copy('src/libs/craftydebug/panels/_assets.js', 'app/src/libs/craftydebug/panels/assets.js');
-  this.copy('src/libs/craftydebug/panels/_entities.js', 'app/src/libs/craftydebug/panels/entities.js');
+  this.copy('src/libs/CraftyDebug/_craftyDebug.js', 'app/src/libs/CraftyDebug/craftyDebug.js');
+  this.copy('src/libs/CraftyDebug/panels/_assets.js', 'app/src/libs/CraftyDebug/panels/assets.js');
+  this.copy('src/libs/CraftyDebug/panels/_entities.js', 'app/src/libs/CraftyDebug/panels/entities.js');
 };
 
 CraftyGenerator.prototype.gruntfileJSON = function gruntfile() {
