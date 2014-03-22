@@ -9,7 +9,7 @@ var ComponentGenerator = yeoman.generators.NamedBase.extend({
   },
 
   files: function () {
-    this.copy('_base.js', 'app/components/' + this.name + '.js');
+    this.copy('_base.js', 'app/scripts/components/' + this.name + '.js');
   }
 });
 
