@@ -35,7 +35,7 @@ module.exports = function(grunt) {
               expand: true,
               flatten: true,
               cwd: 'app/src/bower_components/',
-              src: ['backbone/backbone-min.js', 'backbone/backbone-min.map', 'underscore/underscore-min.js', 'underscore/underscore-min.map'],
+              src: ['underscore/underscore-min.js', 'underscore/underscore-min.map'],
               dest: 'dist/src/libs/',
               filter: 'isFile'
             },

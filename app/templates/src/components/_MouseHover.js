@@ -3,7 +3,7 @@ Crafty.c('MouseHover', {
         var entity = this;
 
         this.requires("Mouse")
-        
+
         entity.bind('MouseOver', function(){
             document.body.style.cursor = "pointer";
         })
@@ -13,7 +13,7 @@ Crafty.c('MouseHover', {
         .bind('Remove', function(){
             document.body.style.cursor = "default";
         });
-    
+
         return this;
     }
 });
