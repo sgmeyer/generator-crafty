@@ -6,6 +6,8 @@ v0.3.0 - 3-26-2014
 * Scaffolding for CraftyJS components
 * updated package dependencies for grunting to the latest, resembling the official Yeoman generators
 * cleaning all files from trailing whitespaces
+* prompt user to enter canvas size
+* make index.html to be built dynamically
 
 v0.2.2 - 3-21-2014
 
