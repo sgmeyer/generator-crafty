@@ -1,3 +1,12 @@
+v0.3.0 - 3-26-2014
+* BackBone dependency removed
+* Project structure cleaned up to resemble the official Yeoman generators
+* Scaffolding the index.html
+* Scaffolding for CraftyJS scenes
+* Scaffolding for CraftyJS components
+* updated package dependencies for grunting to the latest, resembling the official Yeoman generators
+* cleaning all files from trailing whitespaces
+
 v0.2.2 - 3-21-2014
 
 * Updating the paths to be case senstive
