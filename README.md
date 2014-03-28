@@ -2,21 +2,25 @@ generator-crafty
 ================
 
 ## Features
+* CraftyJS project skeleton
+* CraftyJS scaffolding for:
+  * Scenes
+  * Components
 
-* JavaScript minification
-* Built-in preview server with LiveReload
-* CraftyBootstrap scaffolding for more information (https://github.com/ahilles107/CraftyBoilerplate).
+And it's an awesome Yeoman generator:
+* Test server with live reloading
+* Project building using Grunt
+* etc...
 
 ## Decription
 
 Yeoman.io generator for CraftyJS game engine.
 
-You can install this generator using the Node Package Manager (npm).  The following steps will setup your CraftyJS scaffolding.  The scaffolding is based on the CraftyBoilerplate (https://github.com/ahilles107/CraftyBoilerplate).
-
 ## Prerequisite Installation (Node, NPM, and Yeoman)
 
-* To use this generator you must have node.js and npm installed.  To install node and npm go to (http://nodejs.org/).
+* To use this generator you must have node.js and npm installed. To install node and npm go to (http://nodejs.org/).
 * Installing Yeoman will install Grunt and Bower (http://www.yeoman.io)
+* 
 ```
 npm install -g yo
 ```
@@ -33,25 +37,56 @@ Make a new directory, and `cd` into it:
 mkdir my-new-project && cd $_
 ```
 
-Run `yo crafty`:
+Run `yo crafty` and talk with Yeoman, he creates the project skeleton for you 
+
+Now creating a new CraftyJS scene is as easy as running `yo crafty:scene MyScene`
 ```
-yo crafty
+You called the scene subgenerator with the argument MyScene.
+   create app/scripts/scenes/MyScene.js
 ```
 
-## Previewing Gaming
+Now we can edit the just created scene, here's an example:
+```
+Crafty.scene('MyScene', function() {
+  var Block = Crafty.e('2D, Canvas, Color')
+    .attr({
+      x: 100,
+      y: 100,
+      w: 50,
+      h: 50
+    })
+    .color('rgb(20, 185, 40)');
+}, function() {
+  // destructor
+});
+```
 
-Run game in local server with live preview.  Run command in root directory of your game:
+And editing the `game.js` file:
 ```
-grunt server
-```
-or
-```
-grunt
+'use strict';
+
+var Game = {
+  // Initialize and start our game
+  start: function () {
+    Crafty.load([ ], function () {
+
+      // Start crafty and set a background color so that we can see it's working
+      Crafty.init(400, 600);
+      Crafty.background('#66D124');
+
+      // Simply start splashscreen
+      Crafty.scene('splash');
+    });
+  }
+};
+
+Game.start();
 ```
 
+## Previewing your game
 
-## Minify and build game
+Now you can test your beautiful creation in the browser by running `grunt serve`. With live reloading you can edit your projects files and see the magic happen in your browser almost instantly, how cool is that?
 
-```
-grunt build
-```
+## Build for distribution
+
+Are you ready for liftoff? Run `grunt build` and check out the `dist` directory in your projects root.
