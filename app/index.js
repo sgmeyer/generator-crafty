@@ -128,7 +128,6 @@ CraftyGenerator.prototype.writeIndex = function writeIndex() {
 
   this.copy('styles/normalize.css', 'app/styles/normalize.css');
   this.copy('styles/style.css', 'app/styles/style.css');
-  //this.copy("_index.html", "app/index.html");
 };
 
 CraftyGenerator.prototype.install = function () {
