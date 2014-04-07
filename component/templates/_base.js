@@ -1,4 +1,4 @@
-module.export = Crafty.c('<%= name %>', {
+Crafty.c('<%= name %>', {
 
   _placeholder: "..",
 
