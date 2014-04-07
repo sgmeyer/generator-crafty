@@ -14,6 +14,8 @@ Crafty.c('<%= name %>', {
   // constructor
   <%= name.toLowerCase() %>: function(placeholder) {
     this.placeholder = placeholder;
+
+    return this;
   }
 
 });
