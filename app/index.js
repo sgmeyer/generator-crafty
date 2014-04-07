@@ -122,7 +122,7 @@ CraftyGenerator.prototype.writeIndex = function writeIndex() {
     'libs/CraftyDebug/panels/entities.js'
   ], null, 'app');
 
-  this.indexFile = this.appendFiles(this.indexFile, 'js', 'scripts/main.js', ['scripts/combined-scripts.js'], null, '.tmp');
+  this.indexFile = this.appendFiles(this.indexFile, 'js', 'scripts/combined-scripts.js', ['scripts/combined-scripts.js'], null, '.tmp');
 
   this.write('app/index.html', this.indexFile);
 
