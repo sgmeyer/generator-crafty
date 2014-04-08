@@ -122,15 +122,12 @@ CraftyGenerator.prototype.writeIndex = function writeIndex() {
     'libs/CraftyDebug/panels/entities.js'
   ], null, 'app');
 
-  this.indexFile = this.appendFiles(this.indexFile, 'js', 'scripts/components.js', ['scripts/compiled-components.js'], null, '.tmp');
-  this.indexFile = this.appendFiles(this.indexFile, 'js', 'scripts/scenes.js', ['scripts/compiled-scenes.js'], null, '.tmp');
-  this.indexFile = this.appendFiles(this.indexFile, 'js', 'scripts/main.js', ['scripts/combined-scripts.js'], null, '.tmp');
+  this.indexFile = this.appendFiles(this.indexFile, 'js', 'scripts/combined-scripts.js', ['scripts/combined-scripts.js'], null, '.tmp');
 
   this.write('app/index.html', this.indexFile);
 
   this.copy('styles/normalize.css', 'app/styles/normalize.css');
   this.copy('styles/style.css', 'app/styles/style.css');
-  //this.copy("_index.html", "app/index.html");
 };
 
 CraftyGenerator.prototype.install = function () {

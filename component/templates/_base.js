@@ -1,4 +1,4 @@
-module.export = Crafty.c('<%= name %>', {
+Crafty.c('<%= name %>', {
 
   _placeholder: "..",
 
@@ -12,8 +12,10 @@ module.export = Crafty.c('<%= name %>', {
   },
 
   // constructor
-  <%= name %>: function(placeholder) {
+  <%= name.toLowerCase() %>: function(placeholder) {
     this.placeholder = placeholder;
+
+    return this;
   }
 
 });
