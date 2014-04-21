@@ -130,16 +130,6 @@ module.exports = function (grunt) {
         }
       }
     },<% } %>
-    uglify: {
-      options: {
-        mangle: false
-      },
-      dist: {
-        files: {
-          '<%%= yeoman.dist %>/scripts/combined-scripts.min.js': ['<%%= yeoman.dist %>/scripts/combined-scripts.js']
-        }
-      }
-    },
     rev: {
       dist: {
         files: {
