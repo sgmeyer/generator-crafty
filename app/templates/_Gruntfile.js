@@ -145,15 +145,13 @@ module.exports = function (grunt) {
         files: {
           src: [
             '<%%= yeoman.dist %>/scripts/{,*/}*.js',
-            '<%%= yeoman.dist %>/styles/{,*/}*.css',
-            '<%%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-            '<%%= yeoman.dist %>/styles/fonts/*'
+            '<%%= yeoman.dist %>/styles/{,*/}*.css'
           ]
         }
       }
     },
     useminPrepare: {
-      html: '.tmp/index.html',
+      html: '<%%= yeoman.app %>/index.html',
       options: {
         dest: '<%%= yeoman.dist %>'
       }
@@ -220,9 +218,7 @@ module.exports = function (grunt) {
             '*.{ico,txt}',
             '.htaccess',
             'images/{,*/}*.{webp,gif}',
-            'styles/fonts/*',
-            'libs/**',
-            'bower_components/**'
+            'styles/fonts/*'
           ]
         }]
       }
@@ -256,7 +252,7 @@ module.exports = function (grunt) {
           }
         },
         src: '<%%= yeoman.app %>/scripts/app.js',
-        dest: '<%%= yeoman.dist %>/scripts/combined-scripts.js'
+        dest: '.tmp/scripts/combined-scripts.js'
       },
     }
   });
@@ -294,6 +290,7 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'neuter:dist',
+    'concat',
     'cssmin',
     'uglify',
     'copy',
