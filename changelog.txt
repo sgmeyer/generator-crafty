@@ -1,3 +1,6 @@
+V0.3.3 - 5-19-2014
+* Correct usage of usemin when running grunt build
+
 V0.3.2 - 4-08-2014
 * Fixing uglify task
 * Fixing scaffolding of components in index.html
